@@ -3,7 +3,7 @@ namespace SortApp
 {	
 	public class Program
 	{
-		public static int[] SortBubble(int [] arg) // функция сортировки используется самая простаясортировка пузырьком
+		public static int[] SortBubble(int [] arg) // функция сортировки используется самая простая сортировка пузырьком
 		{
 			int temp;
 			for (int i = 0; i < arg.Length-1; i++)
