@@ -1,0 +1,64 @@
+using System;
+namespace SortApp
+{
+	public class Program
+	{
+		public static int[] SortBubble(int [] arg) // функция сортировки используется самая простаясортировка пузырьком
+		{
+			int temp;
+            for (int i = 0; i < arg.Length-1; i++)
+            {
+				for (int j = i + 1; j < arg.Length; j++)
+				{
+					if (arg[i] > arg[j])
+                    {
+						temp = arg[i];
+                        arg[i] = arg[j];
+                        arg[j] = temp;
+                    }
+                }
+            }
+			return arg;
+		}
+		public static bool FindValue(int [] arg, int Value) // функция проверки значения в массиве
+		{
+			for (int i = 0; i < arg.Length; i++)
+			{
+                 if (arg[i] == Value)
+                 {
+					 return true;
+                 }
+            }
+			return false;
+	   }
+		public static void Main()
+        {
+			// ввод чисел
+			int[] inarray = new int[7]; // массив из 7 элементов для ввода
+			int[] outarray = new int[7]; // массив из 7 элементов для возврата значения функции сортировки
+		    int Value;
+            Console.WriteLine("Введите числа");
+			for (int i = 0; i < inarray.Length; i++)
+			{
+				Console.Write("{0}-е число: ", i + 1); // запрашиваем i-ое число
+				inarray[i] = Int32.Parse(Console.ReadLine());
+            }
+			Console.WriteLine("Введите зачение для поиска");
+		    Value = Int32.Parse(Console.ReadLine());
+		    outarray=SortBubble(inarray);
+		    for (int i = 0; i < outarray.Length; i++)
+            {
+				Console.WriteLine(outarray[i]);
+            }
+		    if (FindValue(outarray, Value) == true)
+		    {
+				Console.Write("Заданное значение есть в массиве");
+		    }
+		    else
+		    {
+				Console.Write("Заданного значения в массиве нет");
+		    }
+			Console.ReadLine();
+        }
+    }
+}
