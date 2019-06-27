@@ -29,6 +29,6 @@ namespace Faktorial
             }
             Console.Write("Нажмите любую клавишу для выхода из программы...");
 	    Console.ReadLine();
-		}
 	}
+    }
 }
