@@ -1,0 +1,36 @@
+using System;
+namespace FindWord
+{
+	public class Program
+    {
+		public static void Main()
+		{
+			Console.WriteLine("Введите строку: ");
+			string str = Console.ReadLine(); // вводим строку
+			string[] word = str.Split();//разбиваем строку на слова, предполагаю, что слова разделяются пробелом
+			int count;// счетчик слов
+			string result = "";//строка результата
+			for (int i = 0; i < word.Length; i++)//ищем в строке каждое слово
+			{
+				count = 0;//обнуляем счетчик
+				for (int j = 0; j < word.Length; j++)
+				{
+					if (word[i] == word[j])
+					{
+						count++;//если слова совпали увеличиваем счетчик на 1
+					}
+					if (count > 1)
+					{
+						break;   // проверяем, если счетчик больше 1, значит слово встречается больше 1 раза и дальше искать смысла нет 
+					}
+				}
+				if(count == 1)
+				{
+					result = result + " " + word[i]; // если слово встретилось 1 раз,добавляем его в строку результата
+				}
+			}
+			Console.Write(result);
+			Console.ReadLine();
+		}
+	}
+}
